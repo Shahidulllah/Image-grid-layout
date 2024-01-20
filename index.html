@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple layout</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+        header{
+            background-color: rgb(181, 178, 184);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+      
+        .row{
+            height: 400px;
+            margin-bottom: 5px;
+            display: flex;
+            gap: 5px;
+           
+        }
+        .row > div{
+            flex: 1;
+        }
+        .row img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner img{
+            height: calc( (100% - 5px)/2 );
+        }
+        .row .inner-2{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        /* responsive */
+        /* ================ */
+        @media screen and (max-width: 576px) {
+            .row{
+                flex-direction: column;
+                height: 100%;
+            }
+            .row .inner-2{
+        
+            grid-template-columns: repeat(1, 1fr);  
+        }
+        .inner img, {
+            height: 100%;
+        }
+    }
+
+
+    /* mediam device */
+    @media screen and (min-width: 577px) and (max-width: 992px) {
+            .row{
+                flex-direction: column;
+                height: 100%;
+            }
+            .row .inner-2{
+        
+            grid-template-columns: repeat(2, 1fr);  
+        }
+        .inner img, {
+            height: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+   <header>
+    <h1>This images collage</h1>
+   </header>
+   <main>
+    <section>
+        <div class="image-container">
+            <div class="row">
+                <img src="/images/A.jpg" alt="">
+            </div>
+            <div class="row">
+                <div><img src="/images/B.jpg" alt=""></div>
+                <div><img src="/images/c.jpg" alt=""></div>
+                <div class="inner">
+                    <img src="/images/d.jpg" alt="">
+                    <img src="/images/d.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div><img src="/images/f.jpg" alt=""></div>
+                <div class="inner-2">
+                    <img src="/images/g.jpg" alt="">
+                    <img src="/images/g.jpg" alt="">
+                    <img src="/images/g.jpg" alt="">
+                    <img src="/images/g.jpg" alt="">
+                </div>
+               <div> <img src="/images/h.jpg" alt=""></div>
+            </div>
+        </div>
+       </section>
+   </main>
+
+</body>
+</html>
